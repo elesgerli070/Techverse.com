@@ -1721,3 +1721,60 @@ header {
       grid-template-columns: 1fr;
   }
 }
+@media (max-width: 576px) {
+  .hero-content {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    display: flex !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .hero-image img,
+  .product-main img,
+  .carousel-item img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 280px;
+    max-height: 400px;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  .carousel-items {
+    height: auto !important;
+    display: block;
+  }
+
+  .carousel-item {
+    position: static !important;
+    opacity: 1 !important;
+    height: auto !important;
+    padding: 30px 0;
+    display: block;
+  }
+
+  .product-features {
+    display: none;
+  }
+
+  .carousel-nav {
+    position: static;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
