@@ -383,7 +383,7 @@ header {
   font-size: 14px;
 }
 
-/* Hero Section with CSS-only Carousel */
+/* Hero Section with JavaScript Carousel */
 .hero {
   position: relative;
   background-color: var(--bg-dark);
@@ -391,49 +391,32 @@ header {
   overflow: hidden;
 }
 
-/* CSS-only Carousel Styles */
 .carousel-container {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
-/* Hide radio buttons */
-.carousel-container input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-}
-
-/* Carousel items container */
 .carousel-items {
-  position: relative;
-  width: 100%;
+  display: flex;
+  transition: transform 0.5s ease;
   height: 600px;
-  overflow: hidden;
 }
 
-/* Individual carousel item */
 .carousel-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  flex: 0 0 100%;
+  min-width: 100%;
   padding: 80px 0;
   opacity: 0;
-  transition: opacity 0.6s ease-in-out;
-  z-index: 1;
+  transition: opacity 0.3s ease;
+  display: none;
 }
 
-/* Show the selected carousel item */
-#carousel-item-1:checked ~ .carousel-items #slide1,
-#carousel-item-2:checked ~ .carousel-items #slide2,
-#carousel-item-3:checked ~ .carousel-items #slide3 {
+.carousel-item.active {
   opacity: 1;
-  z-index: 2;
+  display: block;
 }
 
-/* Carousel navigation */
 .carousel-nav {
   position: absolute;
   bottom: 24px;
@@ -458,12 +441,40 @@ header {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-/* Style the active navigation dot */
-#carousel-item-1:checked ~ .carousel-nav label:nth-child(1),
-#carousel-item-2:checked ~ .carousel-nav label:nth-child(2),
-#carousel-item-3:checked ~ .carousel-nav label:nth-child(3) {
+.carousel-nav-item.active {
   background-color: white;
   transform: scale(1.2);
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  z-index: 5;
+  padding: 0 20px;
+}
+
+.carousel-control {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border: none;
+}
+
+.carousel-control:hover {
+  background-color: var(--primary-color);
+  color: white;
 }
 
 /* Hero content styling */
@@ -518,40 +529,44 @@ header {
 /* Responsive styles for the carousel */
 @media (max-width: 992px) {
   .carousel-items {
-      height: 700px;
+    height: auto;
   }
   
   .hero-content {
-      grid-template-columns: 1fr;
-      text-align: center;
+    grid-template-columns: 1fr;
+    text-align: center;
   }
   
   .hero-text {
-      max-width: 100%;
+    max-width: 100%;
   }
   
   .hero-buttons {
-      justify-content: center;
+    justify-content: center;
   }
 }
 
 @media (max-width: 768px) {
-  .carousel-items {
-      height: 650px;
+  .carousel-item {
+    padding: 40px 0;
   }
   
   .hero-text h1 {
-      font-size: 36px;
-  }
-}
-
-@media (max-width: 576px) {
-  .carousel-items {
-      height: 600px;
+    font-size: 36px;
   }
   
-  .hero-buttons {
-      flex-direction: column;
+  .product-main {
+    transform: none !important;
+    max-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  .product-main img {
+    max-height: 280px;
+    object-fit: contain;
   }
 }
 
@@ -588,8 +603,10 @@ header {
 }
 
 .product-main img {
-  max-height: 400px;
+  width: 100%;
+  height: auto;
   object-fit: contain;
+  display: block;
 }
 
 .feature-point {
@@ -597,6 +614,7 @@ header {
   display: flex;
   align-items: center;
   gap: 8px;
+    z-index: 10; 
 }
 
 .point-dot {
@@ -605,6 +623,7 @@ header {
   background-color: var(--primary-color);
   border-radius: 50%;
   position: relative;
+    z-index: 10; 
 }
 
 .point-dot::before {
@@ -642,6 +661,7 @@ header {
   border-radius: 20px;
   font-size: 12px;
   white-space: nowrap;
+    z-index: 10; 
 }
 
 /* Categories Section */
@@ -1063,7 +1083,7 @@ header {
   opacity: 0.8;
 }
 
-/* New Arrivals with CSS-only Carousel */
+/* New Arrivals with JavaScript Carousel */
 .new-arrivals {
   padding: 80px 0;
   background-color: var(--bg-color);
@@ -1098,17 +1118,12 @@ header {
   transform: translateX(4px);
 }
 
-/* New CSS-only Carousel for New Arrivals */
+/* New Arrivals Carousel */
 .new-arrivals-carousel {
   position: relative;
   overflow: hidden;
   padding-bottom: 40px;
   width: 100%;
-}
-
-.new-arrivals-carousel input[type="radio"] {
-  position: absolute;
-  opacity: 0;
 }
 
 .carousel-track {
@@ -1123,20 +1138,7 @@ header {
   min-width: 280px;
 }
 
-/* Carousel Navigation */
-#new-arrival-1:checked ~ .carousel-track {
-  transform: translateX(0);
-}
-
-#new-arrival-2:checked ~ .carousel-track {
-  transform: translateX(calc(-25% - 24px));
-}
-
-#new-arrival-3:checked ~ .carousel-track {
-  transform: translateX(calc(-50% - 48px));
-}
-
-.carousel-nav {
+.arrivals-carousel-nav {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1147,7 +1149,7 @@ header {
   z-index: 3;
 }
 
-.carousel-nav-item {
+.arrivals-carousel-nav .carousel-nav-item {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -1156,19 +1158,16 @@ header {
   transition: all 0.3s ease;
 }
 
-.carousel-nav-item:hover {
+.arrivals-carousel-nav .carousel-nav-item:hover {
   background-color: var(--text-light);
 }
 
-#new-arrival-1:checked ~ .carousel-nav label:nth-child(1),
-#new-arrival-2:checked ~ .carousel-nav label:nth-child(2),
-#new-arrival-3:checked ~ .carousel-nav label:nth-child(3) {
+.arrivals-carousel-nav .carousel-nav-item.active {
   background-color: var(--primary-color);
   transform: scale(1.2);
 }
 
-/* Carousel Controls */
-.carousel-controls {
+.arrivals-carousel-controls {
   position: absolute;
   top: 50%;
   left: 0;
@@ -1178,10 +1177,9 @@ header {
   justify-content: space-between;
   z-index: 5;
   padding: 0 10px;
-  pointer-events: none;
 }
 
-.carousel-control {
+.arrivals-carousel-controls .carousel-control {
   width: 40px;
   height: 40px;
   background-color: white;
@@ -1192,37 +1190,17 @@ header {
   cursor: pointer;
   box-shadow: var(--shadow);
   transition: var(--transition);
-  pointer-events: auto;
-  position: relative;
-  z-index: 10;
+  border: none;
 }
 
-.carousel-control:hover {
+.arrivals-carousel-controls .carousel-control:hover {
   background-color: var(--primary-color);
   color: white;
-}
-
-.carousel-control.prev {
-  margin-left: 0;
-  left: 0;
-}
-
-.carousel-control.next {
-  margin-right: 0;
-  right: 0;
 }
 
 @media (max-width: 992px) {
   .carousel-track .product-card {
     flex: 0 0 calc(33.333% - 16px);
-  }
-  
-  #new-arrival-2:checked ~ .carousel-track {
-    transform: translateX(calc(-33.333% - 24px));
-  }
-  
-  #new-arrival-3:checked ~ .carousel-track {
-    transform: translateX(calc(-66.666% - 48px));
   }
 }
 
@@ -1230,27 +1208,11 @@ header {
   .carousel-track .product-card {
     flex: 0 0 calc(50% - 12px);
   }
-  
-  #new-arrival-2:checked ~ .carousel-track {
-    transform: translateX(calc(-50% - 24px));
-  }
-  
-  #new-arrival-3:checked ~ .carousel-track {
-    transform: translateX(calc(-100% - 48px));
-  }
 }
 
 @media (max-width: 576px) {
   .carousel-track .product-card {
-    flex: 0 0 100%;
-  }
-  
-  #new-arrival-2:checked ~ .carousel-track {
-    transform: translateX(-100%);
-  }
-  
-  #new-arrival-3:checked ~ .carousel-track {
-    transform: translateX(-200%);
+    flex: 0 0 calc(100% - 8px);
   }
 }
 
