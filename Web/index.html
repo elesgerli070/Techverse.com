@@ -108,17 +108,12 @@
         </div>
     </header>
 
-    <!-- Hero Section with CSS-only Carousel -->
+    <!-- Hero Section with JavaScript Carousel -->
     <section class="hero">
         <div class="carousel-container">
-            <!-- Hidden radio buttons for carousel control -->
-            <input type="radio" name="carousel" id="carousel-item-1" checked>
-            <input type="radio" name="carousel" id="carousel-item-2">
-            <input type="radio" name="carousel" id="carousel-item-3">
-            
             <div class="carousel-items">
                 <!-- Slide 1 -->
-                <div class="carousel-item" id="slide1">
+                <div class="carousel-item active" id="slide1">
                     <div class="container">
                         <div class="hero-content">
                             <div class="hero-text">
@@ -240,9 +235,15 @@
             
             <!-- Carousel Navigation -->
             <div class="carousel-nav">
-                <label for="carousel-item-1" class="carousel-nav-item"></label>
-                <label for="carousel-item-2" class="carousel-nav-item"></label>
-                <label for="carousel-item-3" class="carousel-nav-item"></label>
+                <span class="carousel-nav-item active" data-slide="0"></span>
+                <span class="carousel-nav-item" data-slide="1"></span>
+                <span class="carousel-nav-item" data-slide="2"></span>
+            </div>
+            
+            <!-- Carousel Controls -->
+            <div class="carousel-controls">
+                <button class="carousel-control prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-control next"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -535,7 +536,7 @@
         </div>
     </section>
 
-    <!-- New Arrivals with CSS-only Carousel -->
+    <!-- New Arrivals with JavaScript Carousel -->
     <section class="new-arrivals">
         <div class="container">
             <div class="section-header">
@@ -548,11 +549,6 @@
             
             <!-- Updated New Arrivals Carousel -->
             <div class="new-arrivals-carousel">
-                <!-- Radio buttons for carousel control -->
-                <input type="radio" name="new-arrivals" id="new-arrival-1" checked>
-                <input type="radio" name="new-arrivals" id="new-arrival-2">
-                <input type="radio" name="new-arrivals" id="new-arrival-3">
-                
                 <!-- Carousel items -->
                 <div class="carousel-track">
                     <!-- Product 1 -->
@@ -739,16 +735,16 @@
                 </div>
                 
                 <!-- Carousel Navigation -->
-                <div class="carousel-nav">
-                    <label for="new-arrival-1" class="carousel-nav-item"></label>
-                    <label for="new-arrival-2" class="carousel-nav-item"></label>
-                    <label for="new-arrival-3" class="carousel-nav-item"></label>
+                <div class="arrivals-carousel-nav">
+                    <span class="carousel-nav-item active" data-slide="0"></span>
+                    <span class="carousel-nav-item" data-slide="1"></span>
+                    <span class="carousel-nav-item" data-slide="2"></span>
                 </div>
                 
                 <!-- Carousel Controls -->
-                <div class="carousel-controls">
-                    <label for="new-arrival-1" class="carousel-control prev"><i class="fas fa-chevron-left"></i></label>
-                    <label for="new-arrival-3" class="carousel-control next"><i class="fas fa-chevron-right"></i></label>
+                <div class="arrivals-carousel-controls">
+                    <button class="carousel-control prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-control next"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </div>
@@ -858,43 +854,49 @@
                 <p>@elesgerli070</p>
             </div>
             <div class="instagram-grid">
-                <a href="#" class="instagram-item" target="_blank">
-                    <img src="https://placehold.co/192x192/f8f9fa/212529?text=Apple" alt="Apple" width="192" height="192">
-                    <div class="instagram-overlay">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                </a>
-                <a href="#" class="instagram-item" target="_blank">
-                    <img src="https://placehold.co/192x192/f8f9fa/212529?text=Samsung" alt="Samsung" width="192" height="192">
-                    <div class="instagram-overlay">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                </a>
-                <a href="#" class="instagram-item" target="_blank">
-                    <img src="https://placehold.co/192x192/f8f9fa/212529?text=Google" alt="Google" width="192" height="192">
-                    <div class="instagram-overlay">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                </a>
-                <a href="#" class="instagram-item" target="_blank">
-                    <img src="https://placehold.co/192x192/f8f9fa/212529?text=Sony" alt="Sony" width="192" height="192">
-                    <div class="instagram-overlay">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                </a>
-                <a href="#" class="instagram-item" target="_blank">
-                    <img src="https://placehold.co/192x192/f8f9fa/212529?text=Microsoft" alt="Microsoft" width="192" height="192">
-                    <div class="instagram-overlay">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                </a>
-                <a href="#" class="instagram-item" target="_blank">
-                    <img src="https://placehold.co/192x192/f8f9fa/212529?text=Dell" alt="Dell" width="192" height="192">
-                    <div class="instagram-overlay">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                </a>
-            </div>
+            <a href="https://www.instagram.com/apple/" class="instagram-item" target="_blank">
+                <img src="https://placehold.co/192x192/f8f9fa/212529?text=Apple" alt="Apple" width="192" height="192">
+                <div class="instagram-overlay">
+                    <i class="fab fa-instagram"></i>
+          
+                </div>
+            </a>
+            <a href="https://www.instagram.com/samsungmobile/" class="instagram-item" target="_blank">
+                <img src="https://placehold.co/192x192/f8f9fa/212529?text=Samsung" alt="Samsung" width="192" height="192">
+                <div class="instagram-overlay">
+                    <i class="fab fa-instagram"></i>
+                 
+                </div>
+            </a>
+            <a href="https://www.instagram.com/google/" class="instagram-item" target="_blank">
+                <img src="https://placehold.co/192x192/f8f9fa/212529?text=Google" alt="Google" width="192" height="192">
+                <div class="instagram-overlay">
+                    <i class="fab fa-instagram"></i>
+                    
+                </div>
+            </a>
+            <a href="https://www.instagram.com/sony/" class="instagram-item" target="_blank">
+                <img src="https://placehold.co/192x192/f8f9fa/212529?text=Sony" alt="Sony" width="192" height="192">
+                <div class="instagram-overlay">
+                    <i class="fab fa-instagram"></i>
+                    
+                </div>
+            </a>
+            <a href="https://www.instagram.com/microsoft/" class="instagram-item" target="_blank">
+                <img src="https://placehold.co/192x192/f8f9fa/212529?text=Microsoft" alt="Microsoft" width="192" height="192">
+                <div class="instagram-overlay">
+                    <i class="fab fa-instagram"></i>
+                    
+                </div>
+            </a>
+            <a href="https://www.instagram.com/dell/" class="instagram-item" target="_blank">
+                <img src="https://placehold.co/192x192/f8f9fa/212529?text=Dell" alt="Dell" width="192" height="192">
+                <div class="instagram-overlay">
+                    <i class="fab fa-instagram"></i>
+                   
+                </div>
+            </a>
+        </div>
         </div>
     </section>
     
@@ -1002,13 +1004,220 @@
         </div>
     </footer>
     
-    <script>
-        // Dark mode toggle functionality
-        const toggle = document.getElementById('darkModeToggle');
+    <script> document.addEventListener('DOMContentLoaded', function() {
+  // Hero Carousel
+  initHeroCarousel();
+  
+  // New Arrivals Carousel
+  initNewArrivalsCarousel();
+  
+  // Dark Mode Toggle
+  initDarkModeToggle();
+  
+  // Hero Carousel Initialization
+  function initHeroCarousel() {
+    const carouselItems = document.querySelectorAll('.carousel-container .carousel-item');
+    const navItems = document.querySelectorAll('.carousel-nav .carousel-nav-item');
+    const prevBtn = document.querySelector('.carousel-controls .prev');
+    const nextBtn = document.querySelector('.carousel-controls .next');
+    
+    let currentSlide = 0;
+    const totalSlides = carouselItems.length;
+    
+    // Function to show a specific slide
+    function showSlide(index) {
+      // Handle index bounds
+      if (index < 0) index = totalSlides - 1;
+      if (index >= totalSlides) index = 0;
+      
+      // Update current slide
+      currentSlide = index;
+      
+      // Hide all slides and show the current one
+      carouselItems.forEach((item, i) => {
+        item.classList.remove('active');
+      });
+      carouselItems[currentSlide].classList.add('active');
+      
+      // Update active nav item
+      navItems.forEach((item, i) => {
+        item.classList.toggle('active', i === currentSlide);
+      });
+    }
+    
+    // Set up navigation dots
+    navItems.forEach((dot, i) => {
+      dot.addEventListener('click', () => showSlide(i));
+    });
+    
+    // Set up prev/next buttons
+    if (prevBtn) prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+    
+    // Auto-advance slides
+    let slideInterval = setInterval(() => showSlide(currentSlide + 1), 5000);
+    
+    // Pause auto-advance on hover
+    const carousel = document.querySelector('.carousel-container');
+    carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    carousel.addEventListener('mouseleave', () => {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(() => showSlide(currentSlide + 1), 5000);
+    });
+    
+    // Handle touch events for mobile swipe
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, false);
+    
+    carousel.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, false);
+    
+    function handleSwipe() {
+      if (touchEndX < touchStartX) {
+        // Swipe left - next slide
+        showSlide(currentSlide + 1);
+      } else if (touchEndX > touchStartX) {
+        // Swipe right - previous slide
+        showSlide(currentSlide - 1);
+      }
+    }
+    
+    // Initialize the carousel
+    showSlide(0);
+  }
+  
+  // New Arrivals Carousel Initialization
+  function initNewArrivalsCarousel() {
+    const track = document.querySelector('.new-arrivals-carousel .carousel-track');
+    const navItems = document.querySelectorAll('.arrivals-carousel-nav .carousel-nav-item');
+    const prevBtn = document.querySelector('.arrivals-carousel-controls .prev');
+    const nextBtn = document.querySelector('.arrivals-carousel-controls .next');
+    
+    if (!track) return;
+    
+    const items = track.querySelectorAll('.product-card');
+    let currentSlide = 0;
+    let itemsPerView = 4;
+    let totalSlides;
+    
+    // Function to update items per view based on screen width
+    function updateItemsPerView() {
+      if (window.innerWidth <= 576) {
+        itemsPerView = 1;
+      } else if (window.innerWidth <= 768) {
+        itemsPerView = 2;
+      } else if (window.innerWidth <= 992) {
+        itemsPerView = 3;
+      } else {
+        itemsPerView = 4;
+      }
+      
+      totalSlides = Math.ceil(items.length / itemsPerView);
+      
+      // Update navigation dots
+      updateNavDots();
+      
+      // Make sure current slide is valid
+      if (currentSlide >= totalSlides) {
+        currentSlide = totalSlides - 1;
+      }
+      
+      // Update carousel position
+      showSlide(currentSlide);
+    }
+    
+    // Function to update navigation dots
+    function updateNavDots() {
+      const navContainer = document.querySelector('.arrivals-carousel-nav');
+      navContainer.innerHTML = '';
+      
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-nav-item' + (i === currentSlide ? ' active' : '');
+        dot.setAttribute('data-slide', i);
+        dot.addEventListener('click', () => showSlide(i));
+        navContainer.appendChild(dot);
+      }
+    }
+    
+    // Function to show a specific slide
+    function showSlide(index) {
+      // Handle index bounds
+      if (index < 0) index = 0;
+      if (index >= totalSlides) index = totalSlides - 1;
+      
+      // Update current slide
+      currentSlide = index;
+      
+      // Calculate the transform value
+      const itemWidth = items[0].offsetWidth;
+      const gapWidth = 24; // Gap between items
+      const translateX = -(currentSlide * (itemWidth + gapWidth) * itemsPerView);
+      
+      // Update carousel transform
+      track.style.transform = `translateX(${translateX}px)`;
+      
+      // Update active nav item
+      const navItems = document.querySelectorAll('.arrivals-carousel-nav .carousel-nav-item');
+      navItems.forEach((item, i) => {
+        item.classList.toggle('active', i === currentSlide);
+      });
+    }
+    
+    // Set up prev/next buttons
+    if (prevBtn) prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+    
+    // Handle touch events for mobile swipe
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    track.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, false);
+    
+    track.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, false);
+    
+    function handleSwipe() {
+      if (touchEndX < touchStartX) {
+        // Swipe left - next slide
+        showSlide(currentSlide + 1);
+      } else if (touchEndX > touchStartX) {
+        // Swipe right - previous slide
+        showSlide(currentSlide - 1);
+      }
+    }
+    
+    // Initialize the carousel
+    window.addEventListener('resize', updateItemsPerView);
+    updateItemsPerView();
+  }
+  
+  // Dark Mode Toggle
+  function initDarkModeToggle() {
+    const toggle = document.getElementById('darkModeToggle');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
         
-        toggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-        });
-    </script>
+        // Update button text
+        if (document.body.classList.contains('dark-mode')) {
+          toggle.innerHTML = '☀️ İşıqlı Rejim';
+        } else {
+          toggle.innerHTML = '🌙 Qaranlıq Rejim';
+        }
+      });
+    }
+  }
+});</script>
 </body>
 </html>
